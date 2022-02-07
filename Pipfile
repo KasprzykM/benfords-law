@@ -6,6 +6,12 @@ name = "pypi"
 [packages]
 django = "*"
 django-environ = "*"
+matplotlib = "*"
+python-magic = "*"
+python-magic-bin = "*"
+benfordslaw = "*"
+numpy = "*"
+django-bootstrap-v5 = "*"
 
 [dev-packages]
 black = "*"
