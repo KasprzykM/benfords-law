@@ -1,8 +1,17 @@
 {% extends 'base.html' %}
+
+{% load bootstrap5 %}
+
+{% block title %}
+    Upload form
+{% endblock %}
+
 {% block content %}
-  <form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Upload</button>
-  </form>
+
+    <form role="form" method="post" enctype="multipart/form-data" {% if layout != 'vertical' %}class="form-{{ layout }}"{% endif %}>
+        {% csrf_token %}
+        {% bootstrap_form form layout=layout %}
+        {% buttons submit='OK' %}{% endbuttons %}
+    </form>
+
 {% endblock %}
