@@ -42,4 +42,4 @@ ENV/
 .idea/
 
 # DB
-codepoets/db.sqlite3
+src/db.sqlite3

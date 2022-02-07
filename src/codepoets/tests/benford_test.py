@@ -3,7 +3,7 @@ from django.core.exceptions import ValidationError
 from django.test import TestCase
 from django.core.files.base import File
 
-from service import UploadService
+from codepoets.service import UploadService
 
 FLOATING_ERROR = 0.00001
 
