@@ -78,7 +78,9 @@ class UploadService:
             elif column_name:
                 index = header.index(column_name)
 
-        if column_index and column_index <= expected_col_number - 1:
+        if column_index:
+            if not column_index <= expected_col_number - 1:
+                raise ValidationError(f"Column index higher than number of columns")
             index = column_index
 
         data = []
