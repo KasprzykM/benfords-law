@@ -1,7 +1,8 @@
 
 
-TODO:
-- File storage
-- Testing
-- Excel parsing
-- library impl
+### Building and running
+
+```shell
+$ docker-compose build
+$ docker-compose run
+```
