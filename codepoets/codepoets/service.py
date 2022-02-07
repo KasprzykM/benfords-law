@@ -16,7 +16,6 @@ logger = logging.getLogger(__name__)
 class BenfordsLawService:
     @staticmethod
     def get_plot(data: ndarray) -> pyplot:
-        pyplot.clf()
         bl = benfordslaw(method="ks")
         bl.fit(data)
         return bl.plot(title="Benfords law leading digits")
@@ -42,7 +41,7 @@ class UploadService:
         column_index: Optional[int] = None,
     ) -> Any:
 
-        file_type = cls.MIMES_MAPPING[mime_type]
+        file_type = cls.MIMES_MAPPING.get(mime_type, None)
         data_file.file.seek(0)
         if file_type == FileType.CSV_FILE:
             data = cls.parse_csv(data_file, with_header, column_name, column_index)

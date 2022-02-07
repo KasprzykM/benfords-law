@@ -1,21 +1,23 @@
 from django.core.management import utils
 from pathlib import Path
 import environ
+import matplotlib
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 env = environ.Env(
     DEBUG=(bool, False),
     SECRET_KEY=(str, utils.get_random_secret_key()),
+    DJANGO_ALLOWED_HOSTS=(str, "localhost 127.0.0.1 [::1]"),
 )
 
 SECRET_KEY = env("SECRET_KEY")
 DEBUG = env("DEBUG")
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = env("DJANGO_ALLOWED_HOSTS").split(" ")
 
 # Application definition
+matplotlib.use("Agg")
 
 INSTALLED_APPS = [
     "django.contrib.admin",
