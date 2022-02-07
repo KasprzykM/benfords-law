@@ -11,6 +11,7 @@ $ docker-compose run
 Locally:
 ```shell
 $ pipenv shell && pipenv sync && pipenv sync --dev
+$ python manage.py runserver
 ```
 
 ### Tests
