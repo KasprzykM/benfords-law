@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<img src="data:image/png;base64,{{data|safe}}">
+<p>
+   <input type=button value="Form" onClick="javascript:history.go(-1);">
+</p>
+{% endblock %}
